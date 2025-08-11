@@ -12,6 +12,7 @@ The system automatically detects the domain of the incoming query (Healthcare / 
 - 📂 **Easily extensible** domain architecture
 
 ## 📂 Project Structure
+```plaintext
 .
 ├── app
 │   ├── __init__.py           # Package initializer
