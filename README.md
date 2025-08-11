@@ -22,15 +22,15 @@ The system automatically detects the domain of the incoming query (Healthcare / 
 │   ├── models.py             # Pydantic models
 │   ├── prompts.py            # Domain-specific prompts
 │   ├── retriever.py          # FAISS vector retrieval logic
-│   ├── router.py             # Domain detection logic
-│   ├── data/
-│   │   ├── fashion/          # Fashion domain documents
-│   │   └── healthcare/       # Healthcare domain documents
-│   └── indices/              # Prebuilt FAISS vector index files
+│   └── router.py             # Domain detection logic
+├── data/
+│       ├── fashion/          # Fashion domain documents
+│       └── healthcare/       # Healthcare domain documents
+└── indices/                  # Prebuilt FAISS vector index files
 │       ├── fashion_meta.pkl
-│       ├── fashion_vecs.npy
+│       ├── fashion_vecs.npy 
 │       ├── healthcare_meta.pkl
-│       └── healthcare_vecs.npy
+│       └── healthcare_vecs.npy     
 ├── scripts/
 │   └── build_index.py        # Script to build FAISS indices
 ├── tests/                    # Unit tests
