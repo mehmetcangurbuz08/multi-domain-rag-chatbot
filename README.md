@@ -1,72 +1,119 @@
-# Multi-Domain RAG Chatbot
+# 🤖 Multi-Domain RAG Chatbot
 
-FastAPI-based **multi-domain Retrieval-Augmented Generation (RAG) chatbot** with FAISS vector store and Groq-powered generation.
+A **FastAPI-based**, multi-domain **Retrieval-Augmented Generation (RAG)** chatbot.  
+The system automatically detects the domain of the incoming query (Healthcare / Fashion), retrieves the most relevant documents from the corresponding **FAISS** vector database, and generates a fast response using the **Groq API**.
 
-The chatbot automatically detects the query's domain (e.g., Healthcare or Fashion), retrieves top relevant documents from the appropriate vector store, and generates a domain-specific answer.
+---
 
-## 🚀 Features
+## ✨ Features
+- 🔍 **Automatic domain detection** (Healthcare & Fashion, easily extendable)
+- ⚡ Fast in-memory search with **FAISS** vector store
+- 🤖 **Groq API** for low-latency text generation
+- 🚀 **FastAPI** REST service with auto-generated Swagger UI (`/docs`)
+- 🛡 **Stateless** — no conversation history is stored
+- 📂 **Easily extensible** domain architecture
 
-- **Multi-domain support** → Healthcare & Fashion (easily extendable)
-- **Domain detection** based on query content
-- **FAISS** in-memory vector store for fast retrieval
-- **Groq API** for fast and low-latency generation
-- **FastAPI** REST service with auto-generated Swagger UI (`/docs`)
-- **Stateless** request handling — no conversation history needed
+---
 
 ## 📂 Project Structure
-
+```plaintext
 .
 ├── app
-│ ├── api.py # FastAPI endpoints
-│ ├── retriever.py # Vector DB retrieval logic
-│ ├── router.py # Domain detection
-│ ├── generator.py # Groq-powered answer generation
-│ └── data/ # Domain-specific documents
-├── requirements.txt
-└── README.md
+│   ├── __init__.py           # Package initializer
+│   ├── api.py                # FastAPI endpoints
+│   ├── embed.py              # Embedding creation logic
+│   ├── generator.py          # Groq API answer generation
+│   ├── models.py             # Pydantic models
+│   ├── prompts.py            # Domain-specific prompts
+│   ├── retriever.py          # FAISS vector retrieval logic
+│   ├── router.py             # Domain detection logic
+│   ├── data/
+│   │   ├── fashion/          # Fashion domain documents
+│   │   └── healthcare/       # Healthcare domain documents
+│   └── indices/              # Prebuilt FAISS vector index files
+│       ├── fashion_meta.pkl
+│       ├── fashion_vecs.npy
+│       ├── healthcare_meta.pkl
+│       └── healthcare_vecs.npy
+├── scripts/
+│   └── build_index.py        # Script to build FAISS indices
+├── tests/                    # Unit tests
+│   ├── retriever_test.py
+│   └── router_test.py
+├── .gitignore                # Git ignore rules
+├── README.md                 # Project documentation
+└── requirements.txt          # Python dependencies
+⚙️ Installation
+1️⃣ Clone the repository
+bash
+Kopyala
+Düzenle
+git clone https://github.com/<username>/multi-domain-rag-chatbot.git
+cd multi-domain-rag-chatbot
+2️⃣ Create a virtual environment
+bash
+Kopyala
+Düzenle
+# macOS / Linux
+python -m venv .venv
+source .venv/bin/activate
 
-## 🛠 Installation
+# Windows (PowerShell)
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+3️⃣ Install dependencies
+bash
+Kopyala
+Düzenle
+pip install -r requirements.txt
+4️⃣ Set your Groq API key
+bash
+Kopyala
+Düzenle
+# macOS / Linux
+export GROQ_API_KEY="your_groq_api_key"
 
-1. **Clone the repo**
-   git clone https://github.com/<your-username>/multi-domain-rag-chatbot.git
-   cd multi-domain-rag-chatbot
-
-2. **Create virtual environment**
-   python -m venv .venv
-   source .venv/bin/activate # macOS/Linux
-   .venv\Scripts\activate # Windows
-
-3. **Install dependencies**
-   pip install -r requirements.txt
-
-4. **Set your Groq API key**
-   export GROQ_API_KEY="your_groq_api_key" # macOS/Linux
-   setx GROQ_API_KEY "your_groq_api_key" # Windows (permanent)
-
-## ▶️ Running the API
-
+# Windows (PowerShell)
+setx GROQ_API_KEY "your_groq_api_key"
+▶️ Running the API
+bash
+Kopyala
+Düzenle
 uvicorn app.api:app --reload --port 8000
+API: http://127.0.0.1:8000
 
-- API runs at: http://127.0.0.1:8000
-- Swagger docs: http://127.0.0.1:8000/docs
+Swagger UI: http://127.0.0.1:8000/docs
 
-## 📌 Example Request
-
-POST /chat  
+📌 Example Request
+POST /chat
 Request body:
-{
-"query": "Fever and cough, what should I do?"
-}
 
+json
+Kopyala
+Düzenle
+{
+  "query": "Fever and cough, what should I do?"
+}
 Example response:
+
+json
+Kopyala
+Düzenle
 {
-"domain": "healthcare",
-"answer": "If you have fever and cough, check for red flags such as shortness of breath...",
-"source": [
-{ "id": "healthcare-1", "doc": "fever_cough_triage.txt", "score": 0.69 }
-]
+  "domain": "healthcare",
+  "answer": "If you have fever and cough, check for red flags such as shortness of breath...",
+  "source": [
+    { "id": "healthcare-1", "doc": "fever_cough_triage.txt", "score": 0.69 }
+  ]
 }
+🛠 Technologies Used
+FastAPI
 
-## 📄 License
+FAISS
 
-Private repository — All rights reserved.
+Groq API
+
+Pydantic
+
+📜 License
+This project is private. All rights reserved.
