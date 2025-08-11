@@ -39,7 +39,7 @@ The system automatically detects the domain of the incoming query (Healthcare / 
 ├── .gitignore                # Git ignore rules
 ├── README.md                 # Project documentation
 └── requirements.txt          # Python dependencies
-
+```
 ## ⚙️ Installation
 
 ### 1️⃣ Clone the repository
