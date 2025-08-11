@@ -50,10 +50,12 @@ cd multi-domain-rag-chatbot
 ### 2️⃣ Create a virtual environment
 # macOS / Linux
 python -m venv .venv
+
 source .venv/bin/activate
 
 # Windows (PowerShell)
 python -m venv .venv
+
 .venv\Scripts\Activate.ps1
 
 ### 3️⃣ Install dependencies
@@ -68,29 +70,46 @@ setx GROQ_API_KEY "your_groq_api_key"
 
 ## ▶️ Running the API
 uvicorn app.api:app --reload --port 8000
+
 - API: http://127.0.0.1:8000
+
 - Swagger UI: http://127.0.0.1:8000/docs
 
 ## 📌 Example Request
 POST /chat
+
 Request body:
+
 {
+  
   "query": "Fever and cough, what should I do?"
+
 }
 
 Example response:
+
 {
+  
   "domain": "healthcare",
+  
   "answer": "If you have fever and cough, check for red flags such as shortness of breath...",
+  
   "source": [
+    
     { "id": "healthcare-1", "doc": "fever_cough_triage.txt", "score": 0.69 }
+  
   ]
+
 }
+
 
 ## 🛠 Technologies Used
 - FastAPI: https://fastapi.tiangolo.com/
+
 - FAISS: https://faiss.ai/
+
 - Groq API: https://groq.com/
+
 - Pydantic: https://docs.pydantic.dev/
 
 ## 📜 License
