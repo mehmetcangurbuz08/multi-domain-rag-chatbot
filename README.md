@@ -44,6 +44,7 @@ The system automatically detects the domain of the incoming query (Healthcare / 
 
 ### 1️⃣ Clone the repository
 git clone [https://github.com/<username>/multi-domain-rag-chatbot.git](https://github.com/mehmetcangurbuz08/multi-domain-rag-chatbot.git)
+
 cd multi-domain-rag-chatbot
 
 ### 2️⃣ Create a virtual environment
