@@ -1,0 +1,5 @@
+﻿Fever & Cough Triage (ateş ve öksürük)
+Red flags: shortness of breath at rest, chest pain, O2 sat < 92%, confusion, persistent high fever (>39°C for 3+ days). Seek urgent care.
+Home care: rest, hydration, antipyretics (paracetamol). Avoid double-dosing NSAIDs.
+Differentials: viral URI, influenza, COVID-19, bacterial pneumonia (fever + productive cough + pleuritic pain), asthma exacerbation.
+Next step: if red flags absent, consider self-care 48–72h; otherwise clinical evaluation and possibly chest X‑ray.

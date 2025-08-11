@@ -1,0 +1,5 @@
+﻿Hypertension Basics (hipertansiyon)
+Definition: persistently elevated blood pressure. Office BP ≥140/90 mmHg or home BP ≥135/85 mmHg on multiple days.
+Risk reduction: salt restriction, weight loss (5–10%), regular aerobic exercise, limit alcohol, DASH diet.
+First-line meds (varies): ACEi/ARB, thiazide-like diuretics, or calcium channel blockers. Monitor potassium/creatinine with ACEi/ARB.
+Targets: typically <130/80 mmHg in high-risk; individualize for frail patients.
