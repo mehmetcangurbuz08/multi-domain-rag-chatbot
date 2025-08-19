@@ -15,11 +15,8 @@ The system automatically detects the domain of the incoming query (Healthcare / 
 ```plaintext
 .
 ├── app
-│   ├── __init__.py           # Package initializer
 │   ├── api.py                # FastAPI endpoints
-│   ├── embed.py              # Embedding creation logic
 │   ├── generator.py          # Groq API answer generation
-│   ├── models.py             # Pydantic models
 │   ├── prompts.py            # Domain-specific prompts
 │   ├── retriever.py          # FAISS vector retrieval logic
 │   └── router.py             # Domain detection logic
