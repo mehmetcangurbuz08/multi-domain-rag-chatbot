@@ -11,7 +11,8 @@ load_dotenv()  # .env varsa okusun
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=GROQ_API_KEY)
 
-# Hız/ücret için iyi denge:
+# modeli ayarla
+# (örneğin, "llama-3.1-8b-instant" veya "llama-3.1-70b-versatile")
 MODEL = "llama-3.1-8b-instant"  # alternatif: "llama-3.1-70b-versatile"
 
 def generate_answer(domain: str, query: str, passages: List[Dict]) -> str:

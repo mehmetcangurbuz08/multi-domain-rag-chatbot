@@ -25,7 +25,7 @@ class DomainRetriever:
         # Sorguyu embed et
         q_vec = self.model.encode([query], convert_to_numpy=True, normalize_embeddings=True)[0]
 
-        # Cosine similarity (normalize edildiği için dot product = cosine)
+        # Cosine similarity 
         scores = self.vecs @ q_vec
 
         # En yüksek skorları bul
