@@ -4,6 +4,8 @@ from app.prompts import make_prompt
 
 from groq import Groq
 import os
+from dotenv import load_dotenv
+load_dotenv()  # .env varsa okusun
 
 # Ortamdan anahtarı al
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
